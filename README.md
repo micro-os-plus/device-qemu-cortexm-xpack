@@ -1,2 +1,4 @@
 # platform-qemu-cortexm-xpack
-A source xPack with support for running tests on QEMU
+
+This project does not use the `master` branch, please
+switch to the `xpack` branch to get the project files.
