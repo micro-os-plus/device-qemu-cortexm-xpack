@@ -37,5 +37,11 @@
     "@xpack-3rd-party/arm-cmsis-core-m": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-2"
   },
   "devDependencies": {},
-  "xpack": {}
+  "xpack": {
+    "minimumXpmRequired": "0.11.0",
+    "actions": {
+      "link-deps": "xpm link @xpack-3rd-party/arm-cmsis-core-m"
+    }
+
+  }
 }
