@@ -33,6 +33,9 @@
   },
   "license": "MIT",
   "config": {},
+  "dependencies": {
+    "@xpack-3rd-party/arm-cmsis-core-m": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-2"
+  },
   "devDependencies": {},
   "xpack": {}
 }
