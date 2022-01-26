@@ -112,4 +112,7 @@ Thumbs.db
 # macOS
 .DS_Store
 
+build/
+
 # end
+
