@@ -8,7 +8,7 @@
 #
 # -----------------------------------------------------------------------------
 
-# https://cmake.org/cmake/help/v3.19/
+# https://cmake.org/cmake/help/v3.20/
 
 # PRIVATE: build definitions, used internally
 # INTERFACE: usage definitions, passed up to targets linking to it
@@ -88,12 +88,12 @@ message(VERBOSE "micro-os-plus::device -> micro-os-plus-device-static")
 
 # ===========================================================================
 
-add_library(micro-os-plus-platform-qemu-cortexm-interface STATIC EXCLUDE_FROM_ALL)
+add_library(micro-os-plus-platform-qemu-cortexm-static STATIC EXCLUDE_FROM_ALL)
 
 # -------------------------------------------------------------------------
 
 target_compile_definitions(
-  micro-os-plus-platform-qemu-cortexm-interface
+  micro-os-plus-platform-qemu-cortexm-static
 
   PUBLIC
     "${xpack_platform_compile_definition}"
@@ -103,7 +103,7 @@ message(VERBOSE "+ ${xpack_platform_compile_definition}")
 
 
 target_compile_options(
-  micro-os-plus-platform-qemu-cortexm-interface
+  micro-os-plus-platform-qemu-cortexm-static
 
   PRIVATE
     # To silence HAL warnings.
@@ -118,7 +118,7 @@ target_compile_options(
 )
 
 target_link_libraries(
-  micro-os-plus-platform-qemu-cortexm-interface
+  micro-os-plus-platform-qemu-cortexm-static
 
   PUBLIC
     micro-os-plus::device
@@ -128,7 +128,7 @@ target_link_libraries(
 # -------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::platform-qemu-cortexm ALIAS micro-os-plus-platform-qemu-cortexm-interface)
-message(VERBOSE "micro-os-plus::platform-qemu-cortexm -> micro-os-plus-platform-qemu-cortexm-interface")
+add_library(micro-os-plus::platform-qemu-cortexm ALIAS micro-os-plus-platform-qemu-cortexm-static)
+message(VERBOSE "micro-os-plus::platform-qemu-cortexm -> micro-os-plus-platform-qemu-cortexm-static")
 
 # -----------------------------------------------------------------------------
