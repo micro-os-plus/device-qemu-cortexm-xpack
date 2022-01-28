@@ -33,36 +33,125 @@ project(
   DESCRIPTION "µOS++ QEMU Cortex-M board support"
 )
 
-# Must be called from the project root folder.
-enable_testing()
+# PRIVATE: build definitions, used internally
+# INTERFACE: usage definitions, passed up to targets linking to it
+# PUBLIC: both
 
-# -----------------------------------------------------------------------------
-## Project wide setup ##
-
-enable_language(C)
-enable_language(CXX)
-enable_language(ASM)
-
-# Specify the C/C++ standards.
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_C_STANDARD_REQUIRED ON)
-set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-# -----------------------------------------------------------------------------
-
-if ("${CMAKE_CURRENT_LIST_DIR}" STREQUAL "${CMAKE_SOURCE_DIR}")
-
-  # Tests, only when not part of a parent application
-  add_subdirectory("tests")
-
-else()
-
-  # Main targets built by this project.
-  add_subdirectory("sources")
-
+if(COMMAND xpack_get_package_name_and_version)
+  xpack_get_package_name_and_version("${CMAKE_CURRENT_SOURCE_DIR}/package.json")
+  message(VERBOSE "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}...")
 endif()
+
+# -----------------------------------------------------------------------------
+# Preprocessor symbols.
+
+# TODO: migrate them to CMake options.
+set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
+set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M4")
+
+# -----------------------------------------------------------------------------
+
+add_library(micro-os-plus-device-static STATIC EXCLUDE_FROM_ALL)
+
+# -------------------------------------------------------------------------
+
+target_sources(
+  micro-os-plus-device-static
+
+  PRIVATE
+    "src/system_cortexm.c"
+    "src/vectors_cortexm.c"
+)
+
+message(VERBOSE "+ src/system_cortexm.c")
+message(VERBOSE "+ src/vectors_cortexm.c")
+
+target_include_directories(
+  micro-os-plus-device-static
+
+  PUBLIC
+    "include"
+)
+
+message(VERBOSE "+ include")
+
+target_compile_definitions(
+  micro-os-plus-device-static
+
+  PUBLIC
+    "${xpack_device_compile_definition}"
+)
+
+message(VERBOSE "+ ${xpack_device_compile_definition}")
+
+target_compile_options(
+  micro-os-plus-device-static
+
+  PRIVATE
+    # ...
+)
+
+target_link_libraries(
+  micro-os-plus-device-static
+
+  PUBLIC
+    xpack-3rd-party::arm-cmsis-core-m
+
+    # Use the device specific definitions from the architecture (hack!).
+    micro-os-plus::architecture-cortexm-device
+
+    micro-os-plus::startup
+)
+
+# -------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::device ALIAS micro-os-plus-device-static)
+message(VERBOSE "> micro-os-plus::device -> micro-os-plus-device-static")
+
+# ===========================================================================
+
+add_library(micro-os-plus-platform-qemu-cortexm-static STATIC EXCLUDE_FROM_ALL)
+
+# -------------------------------------------------------------------------
+
+target_compile_definitions(
+  micro-os-plus-platform-qemu-cortexm-static
+
+  PUBLIC
+    "${xpack_platform_compile_definition}"
+)
+
+message(VERBOSE "+ ${xpack_platform_compile_definition}")
+
+
+target_compile_options(
+  micro-os-plus-platform-qemu-cortexm-static
+
+  PRIVATE
+    # To silence HAL warnings.
+    -Wno-padded
+    -Wno-switch-enum
+    -Wno-conversion
+    -Wno-redundant-decls
+    -Wno-switch-default
+    -Wno-unused-parameter
+
+    $<$<COMPILE_LANG_AND_ID:C,GNU>:-Wno-bad-function-cast>
+)
+
+target_link_libraries(
+  micro-os-plus-platform-qemu-cortexm-static
+
+  PUBLIC
+    micro-os-plus::device
+    micro-os-plus::diag-trace
+)
+
+# -------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::platform-qemu-cortexm ALIAS micro-os-plus-platform-qemu-cortexm-static)
+message(VERBOSE "> micro-os-plus::platform-qemu-cortexm -> micro-os-plus-platform-qemu-cortexm-static")
 
 # -----------------------------------------------------------------------------
