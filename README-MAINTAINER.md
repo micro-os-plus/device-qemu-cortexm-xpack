@@ -1,7 +1,7 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/platform-qemu-cortexm-xpack)](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/platform-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/issues/)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/platform-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/pulls)
+[![license](https://img.shields.io/github/license/micro-os-plus/device-qemu-cortexm-xpack)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/device-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/device-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/pulls)
 
 # Maintainer info
 
@@ -9,28 +9,28 @@
 
 The project is hosted on GitHub:
 
-- <https://github.com/micro-os-plus/platform-qemu-cortexm-xpack.git>
+- <https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git>
 
 To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -rf ~/Work/platform-qemu-cortexm-xpack.git && \
+rm -rf ~/Work/device-qemu-cortexm-xpack.git && \
 mkdir -p ~/Work && \
 git clone \
-  https://github.com/micro-os-plus/platform-qemu-cortexm-xpack.git \
-  ~/Work/platform-qemu-cortexm-xpack.git
+  https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git \
+  ~/Work/device-qemu-cortexm-xpack.git
 ```
 
 For development purposes, clone the `xpack-develop` branch:
 
 ```sh
-rm -rf ~/Work/platform-qemu-cortexm-xpack.git && \
+rm -rf ~/Work/device-qemu-cortexm-xpack.git && \
 mkdir -p ~/Work && \
 git clone \
   --branch xpack-develop \
-  https://github.com/micro-os-plus/platform-qemu-cortexm-xpack.git \
-  ~/Work/platform-qemu-cortexm-xpack.git
+  https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git \
+  ~/Work/device-qemu-cortexm-xpack.git
 ```
 
 ## Prerequisites
@@ -49,14 +49,14 @@ CppStyle plug-in.
 In the `micro-os-plus/web-jekyll` GitHub repo:
 
 - select the `develop` branch
-- add a new file to `_posts/platform-qemu-cortexm/releases`
-- name the file like `2020-12-19-platform-qemu-cortexm-v1-0-0-released.md`
-- name the post like: **µOS++ platform-qemu-cortexm v1.0.0 released**
+- add a new file to `_posts/device-qemu-cortexm/releases`
+- name the file like `2020-12-19-device-qemu-cortexm-v1-0-0-released.md`
+- name the post like: **µOS++ device-qemu-cortexm v1.0.0 released**
 - update the `date:` field with the current date
 - update the GitHub Actions URLs using the actual test pages
 
 If any, refer to closed
-[issues](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/issues/)
+[issues](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/)
 as:
 
 - **[Issue:\[#1\]\(...\)]**.
@@ -75,13 +75,13 @@ as:
 - push the `xpack-develop` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
-  (<https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/actions/workflows/CI.yml>)
+  (<https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions/workflows/CI.yml>)
 - `npm publish --tag next` (use `--access public` when publishing for
   the first time)
 
 The version is visible at:
 
-- <https://www.npmjs.com/package/@micro-os-plus/platform-qemu-cortexm?activeTab=versions>
+- <https://www.npmjs.com/package/@micro-os-plus/device-qemu-cortexm?activeTab=versions>
 
 ## Testing
 
@@ -90,7 +90,7 @@ The project includes unit tests.
 To run them, run:
 
 ```sh
-cd platform-qemu-cortexm-xpack.git
+cd device-qemu-cortexm-xpack.git
 xpm run install-all
 xpm run test
 ```
@@ -98,7 +98,7 @@ xpm run test
 ## Continuous Integration
 
 The CI tests are performed on GitHub Actions, as the
-[CI on Push](https://github.com/micro-os-plus/platform-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[CI on Push](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 workflow.
 
 ## Update the repo
@@ -114,9 +114,9 @@ When the package is considered stable:
 
 When the release is considered stable, promote it as `latest`:
 
-- `npm dist-tag ls @micro-os-plus/platform-qemu-cortexm`
-- `npm dist-tag add @micro-os-plus/platform-qemu-cortexm@1.0.0 latest`
-- `npm dist-tag ls @@micro-os-plus/platform-qemu-cortexm`
+- `npm dist-tag ls @micro-os-plus/device-qemu-cortexm`
+- `npm dist-tag add @micro-os-plus/device-qemu-cortexm@1.0.0 latest`
+- `npm dist-tag ls @@micro-os-plus/device-qemu-cortexm`
 
 ## Announce to the community
 
@@ -126,6 +126,6 @@ Post an announcement to the forum.
 
 - in a separate browser windows, open [TweetDeck](https://tweetdeck.twitter.com/)
 - using the `@micro_os_plus` account
-- paste the release name like **µOS++ platform-qemu-cortexm v1.0.0 released**
+- paste the release name like **µOS++ device-qemu-cortexm v1.0.0 released**
 - paste the link to the Web page release
 - click the **Tweet** button
