@@ -25,6 +25,7 @@
 MEMORY
 {
   FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 16M
-  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 16K
+  /* From the source code the size is apparently 16, but >8 crashes. */
+  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 8M
 }
 
