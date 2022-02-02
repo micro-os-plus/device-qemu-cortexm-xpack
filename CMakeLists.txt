@@ -36,6 +36,10 @@ if(NOT xpack_device_compile_definition)
   message(FATAL_ERROR "Define 'xpack_device_compile_definition' globally before including device-qemu-cortexm")
 endif()
 
+if(TARGET micro-os-plus::device)
+  message(FATAL_ERROR "micro-os-plus::device already defined")
+endif()
+
 # -----------------------------------------------------------------------------
 ## The project library definitions ##
 
@@ -44,15 +48,15 @@ endif()
 # INTERFACE: usage definitions, passed up to targets linking to it
 # PUBLIC: both
 
-add_library(micro-os-plus-device-qemu-cortexm-static STATIC EXCLUDE_FROM_ALL)
+add_library(micro-os-plus-device-qemu-cortexm-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 # Target settings.
 
 target_sources(
-  micro-os-plus-device-qemu-cortexm-static
+  micro-os-plus-device-qemu-cortexm-interface
 
-  PRIVATE
+  INTERFACE
     "src/system_cortexm.c"
     "src/vectors_cortexm.c"
 )
@@ -61,34 +65,34 @@ message(VERBOSE "+ src/system_cortexm.c")
 message(VERBOSE "+ src/vectors_cortexm.c")
 
 target_include_directories(
-  micro-os-plus-device-qemu-cortexm-static
+  micro-os-plus-device-qemu-cortexm-interface
 
-  PUBLIC
+  INTERFACE
     "include"
 )
 
 message(VERBOSE "+ include")
 
 target_compile_definitions(
-  micro-os-plus-device-qemu-cortexm-static
+  micro-os-plus-device-qemu-cortexm-interface
 
-  PUBLIC
+  INTERFACE
     "${xpack_device_compile_definition}"
 )
 
-message(VERBOSE "+ ${xpack_device_compile_definition}")
+message(VERBOSE "+ -D${xpack_device_compile_definition}")
 
 target_compile_options(
-  micro-os-plus-device-qemu-cortexm-static
+  micro-os-plus-device-qemu-cortexm-interface
 
-  PRIVATE
+  INTERFACE
     # ...
 )
 
 target_link_libraries(
-  micro-os-plus-device-qemu-cortexm-static
+  micro-os-plus-device-qemu-cortexm-interface
 
-  PUBLIC
+  INTERFACE
     xpack-3rd-party::arm-cmsis-core-m
 
     # Use the device specific definitions from the architecture (hack!).
@@ -100,7 +104,10 @@ target_link_libraries(
 # -----------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::device ALIAS micro-os-plus-device-qemu-cortexm-static)
-message(VERBOSE "> micro-os-plus::device -> micro-os-plus-device-qemu-cortexm-static")
+add_library(micro-os-plus::device-qemu-cortexm ALIAS micro-os-plus-device-qemu-cortexm-interface)
+message(VERBOSE "> micro-os-plus::device-qemu-cortexm -> micro-os-plus-device-qemu-cortexm-interface")
+
+add_library(micro-os-plus::device ALIAS micro-os-plus-device-qemu-cortexm-interface)
+message(VERBOSE "> micro-os-plus::device -> micro-os-plus-device-qemu-cortexm-interface")
 
 # -----------------------------------------------------------------------------
