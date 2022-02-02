@@ -6,13 +6,16 @@
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/MIT/.
+#
 # -----------------------------------------------------------------------------
 
 # This file is intended to be consumed by applications with:
 #
 # `add_subdirectory("xpacks/micro-os-plus-device-qemu-cortexm")`
 #
-# The result is a library that can be added to the linker with:
+# The result is an interface library that can be added to the linker with:
 #
 # `target_link_libraries(your-target PUBLIC micro-os-plus::device-qemu-cortexm)`
 
@@ -36,10 +39,6 @@ if(NOT xpack_device_compile_definition)
   message(FATAL_ERROR "Define 'xpack_device_compile_definition' globally before including device-qemu-cortexm")
 endif()
 
-if(TARGET micro-os-plus::device)
-  message(FATAL_ERROR "micro-os-plus::device already defined")
-endif()
-
 # -----------------------------------------------------------------------------
 ## The project library definitions ##
 
@@ -53,6 +52,15 @@ add_library(micro-os-plus-device-qemu-cortexm-interface INTERFACE EXCLUDE_FROM_A
 # -----------------------------------------------------------------------------
 # Target settings.
 
+target_include_directories(
+  micro-os-plus-device-qemu-cortexm-interface
+
+  INTERFACE
+    "include"
+)
+
+message(VERBOSE "+ -I include")
+
 target_sources(
   micro-os-plus-device-qemu-cortexm-interface
 
@@ -64,15 +72,6 @@ target_sources(
 message(VERBOSE "+ src/system_cortexm.c")
 message(VERBOSE "+ src/vectors_cortexm.c")
 
-target_include_directories(
-  micro-os-plus-device-qemu-cortexm-interface
-
-  INTERFACE
-    "include"
-)
-
-message(VERBOSE "+ include")
-
 target_compile_definitions(
   micro-os-plus-device-qemu-cortexm-interface
 
@@ -80,7 +79,7 @@ target_compile_definitions(
     "${xpack_device_compile_definition}"
 )
 
-message(VERBOSE "+ -D${xpack_device_compile_definition}")
+message(VERBOSE "+ -D ${xpack_device_compile_definition}")
 
 target_compile_options(
   micro-os-plus-device-qemu-cortexm-interface
@@ -93,17 +92,17 @@ target_link_libraries(
   micro-os-plus-device-qemu-cortexm-interface
 
   INTERFACE
+    # Dependencies
     xpack-3rd-party::arm-cmsis-core-m
-
-    # Use the device specific definitions from the architecture (hack!).
     micro-os-plus::device-cortexm
-
+    # TODO: check if really needed!
     micro-os-plus::startup
 )
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library(micro-os-plus::device-qemu-cortexm ALIAS micro-os-plus-device-qemu-cortexm-interface)
 message(VERBOSE "> micro-os-plus::device-qemu-cortexm -> micro-os-plus-device-qemu-cortexm-interface")
 
