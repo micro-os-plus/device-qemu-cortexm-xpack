@@ -3,7 +3,7 @@
 Releases in reverse chronological order.
 
 Please check
-[GitHub](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/)
+[GitHub](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
 ## 2022-02-04

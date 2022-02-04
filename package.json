@@ -1,7 +1,7 @@
 {
-  "name": "@micro-os-plus/device-qemu-cortexm",
+  "name": "@micro-os-plus/devices-qemu-cortexm",
   "version": "1.1.0",
-  "description": "A source xPack with the µOS++ QEMU Cortex-M board support",
+  "description": "A source xPack with the µOS++ QEMU Cortex-M devices support",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git/"
+    "url": "https://github.com/micro-os-plus/devices-qemu-cortexm-xpack.git/"
   },
   "bugs": {
-    "url": "https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/"
+    "url": "https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/"
   },
-  "homepage": "https://github.com/micro-os-plus/device-qemu-cortexm-xpack/",
+  "homepage": "https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/",
   "keywords": [
     "xpack",
     "c++",
@@ -34,7 +34,7 @@
   "license": "MIT",
   "config": {},
   "dependencies": {
-    "@micro-os-plus/device-cortexm": "github:micro-os-plus/device-cortexm-xpack#semver:2.3.0",
+    "@micro-os-plus/devices-cortexm": "github:micro-os-plus/devices-cortexm-xpack#semver:2.0.0",
     "@xpack-3rd-party/arm-cmsis-core-m": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-2"
   },
   "devDependencies": {},
@@ -42,7 +42,7 @@
     "minimumXpmRequired": "0.11.0",
     "actions": {
       "link-deps": [
-        "xpm link @micro-os-plus/device-cortexm",
+        "xpm link @micro-os-plus/devices-cortexm",
         "xpm link @xpack-3rd-party/arm-cmsis-core-m"
       ]
     }

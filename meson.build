@@ -13,21 +13,21 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('xpacks/micro-os-plus-device-qemu-cortexm')`
+# `subdir('xpacks/micro-os-plus-devices-qemu-cortexm')`
 #
 # The result is a dependency that can be refered as:
 #
-# `dependencies: [micro_os_plus_device_qemu_cortexm_dependency],`
+# `dependencies: [micro_os_plus_devices_qemu_cortexm_dependency],`
 
 # Note: the meson configuration is provided only as a proof of concept,
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-message('Processing xPack @micro-os-plus/device-qemu-cortexm...')
+message('Processing xPack @micro-os-plus/devices-qemu-cortexm...')
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-micro_os_plus_device_qemu_cortexm_dependency = declare_dependency(
+micro_os_plus_devices_qemu_cortexm_dependency = declare_dependency(
   include_directories: include_directories(
     'include',
   ),
@@ -40,7 +40,7 @@ micro_os_plus_device_qemu_cortexm_dependency = declare_dependency(
   ],
   dependencies: [
     xpack_3rd_party_arm_cmsis_core_m_dependency,
-    micro_os_plus_device_cortexm_dependency,
+    micro_os_plus_devices_cortexm_dependency,
     micro_os_plus_startup_dependency,
   ],
 )
@@ -49,6 +49,6 @@ message('+ -I include')
 message('+ src/system_cortexm.c')
 message('+ src/vectors_cortexm.c')
 message('+ -D ' + xpack_device_compile_definition)
-message('> micro_os_plus_device_qemu_cortexm_dependency')
+message('> micro_os_plus_devices_qemu_cortexm_dependency')
 
 # -----------------------------------------------------------------------------

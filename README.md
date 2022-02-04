@@ -1,5 +1,5 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/device-qemu-cortexm-xpack)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![license](https://img.shields.io/github/license/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
 # A source xPack with the µOS++ QEMU Cortex-M board support files
 
@@ -43,18 +43,18 @@ For now, it can be installed from GitHub:
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install github:micro-os-plus/device-qemu-cortexm-xpack
+xpm install github:micro-os-plus/devices-qemu-cortexm-xpack
 ```
 
 When ready, this package will be available as
-[`@micro-os-plus/device-qemu-cortexm-xpack`](https://www.npmjs.com/package/@micro-os-plus/device-qemu-cortexm-xpack)
+[`@micro-os-plus/devices-qemu-cortexm-xpack`](https://www.npmjs.com/package/@micro-os-plus/devices-qemu-cortexm-xpack)
 from the `npmjs.com` registry:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @micro-os-plus/device-qemu-cortexm-xpack@latest
+xpm install @micro-os-plus/devices-qemu-cortexm-xpack@latest
 ```
 
 ### Git submodule
@@ -67,8 +67,8 @@ cd my-project
 git init # Unless already a Git project
 mkdir -p xpacks
 
-git submodule add https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git \
-  xpacks/micro-os-plus-device-qemu-cortexm-xpack
+git submodule add https://github.com/micro-os-plus/devices-qemu-cortexm-xpack.git \
+  xpacks/micro-os-plus-devices-qemu-cortexm-xpack
 ```
 
 ## Branches

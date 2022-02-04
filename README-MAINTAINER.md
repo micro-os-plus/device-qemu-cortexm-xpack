@@ -1,7 +1,7 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/device-qemu-cortexm-xpack)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
-[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/device-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/device-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/pulls)
+[![license](https://img.shields.io/github/license/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/LICENSE)
+[![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/devices-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/devices-qemu-cortexm-xpack.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/pulls)
 
 # Maintainer info
 
@@ -9,7 +9,7 @@
 
 The project is hosted on GitHub:
 
-- <https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git>
+- <https://github.com/micro-os-plus/devices-qemu-cortexm-xpack.git>
 
 To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
@@ -18,7 +18,7 @@ terminal (on Windows use the _Git Bash_ console):
 rm -rf ~/Work/device-qemu-cortexm-xpack.git && \
 mkdir -p ~/Work && \
 git clone \
-  https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git \
+  https://github.com/micro-os-plus/devices-qemu-cortexm-xpack.git \
   ~/Work/device-qemu-cortexm-xpack.git
 ```
 
@@ -29,7 +29,7 @@ rm -rf ~/Work/device-qemu-cortexm-xpack.git && \
 mkdir -p ~/Work && \
 git clone \
   --branch xpack-develop \
-  https://github.com/micro-os-plus/device-qemu-cortexm-xpack.git \
+  https://github.com/micro-os-plus/devices-qemu-cortexm-xpack.git \
   ~/Work/device-qemu-cortexm-xpack.git
 ```
 
@@ -56,7 +56,7 @@ In the `micro-os-plus/web-jekyll` GitHub repo:
 - update the GitHub Actions URLs using the actual test pages
 
 If any, refer to closed
-[issues](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/)
+[issues](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 as:
 
 - **[Issue:\[#1\]\(...\)]**.
@@ -76,13 +76,13 @@ as:
 - push the `xpack-develop` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
-  (<https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions/workflows/CI.yml>)
+  (<https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/CI.yml>)
 - `npm publish --tag next` (use `--access public` when publishing for
   the first time)
 
 The version is visible at:
 
-- <https://www.npmjs.com/package/@micro-os-plus/device-qemu-cortexm?activeTab=versions>
+- <https://www.npmjs.com/package/@micro-os-plus/devices-qemu-cortexm?activeTab=versions>
 
 ## Testing
 
@@ -99,7 +99,7 @@ xpm run test
 ## Continuous Integration
 
 The CI tests are performed on GitHub Actions, as the
-[CI on Push](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 workflow.
 
 ## Update the repo
@@ -115,9 +115,9 @@ When the package is considered stable:
 
 When the release is considered stable, promote it as `latest`:
 
-- `npm dist-tag ls @micro-os-plus/device-qemu-cortexm`
-- `npm dist-tag add @micro-os-plus/device-qemu-cortexm@1.1.0 latest`
-- `npm dist-tag ls @@micro-os-plus/device-qemu-cortexm`
+- `npm dist-tag ls @micro-os-plus/devices-qemu-cortexm`
+- `npm dist-tag add @micro-os-plus/devices-qemu-cortexm@1.1.0 latest`
+- `npm dist-tag ls @@micro-os-plus/devices-qemu-cortexm`
 
 ## Announce to the community
 
