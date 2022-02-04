@@ -59,8 +59,6 @@ target_include_directories(
     "include"
 )
 
-message(VERBOSE "+ -I include")
-
 target_sources(
   micro-os-plus-device-qemu-cortexm-interface
 
@@ -69,17 +67,12 @@ target_sources(
     "src/vectors_cortexm.c"
 )
 
-message(VERBOSE "+ src/system_cortexm.c")
-message(VERBOSE "+ src/vectors_cortexm.c")
-
 target_compile_definitions(
   micro-os-plus-device-qemu-cortexm-interface
 
   INTERFACE
     "${xpack_device_compile_definition}"
 )
-
-message(VERBOSE "+ -D ${xpack_device_compile_definition}")
 
 target_compile_options(
   micro-os-plus-device-qemu-cortexm-interface
@@ -98,6 +91,10 @@ target_link_libraries(
     # TODO: check if really needed!
     micro-os-plus::startup
 )
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(micro-os-plus-device-qemu-cortexm-interface)
+endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
