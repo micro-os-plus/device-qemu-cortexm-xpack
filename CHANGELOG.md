@@ -8,6 +8,8 @@ and close existing issues and pull requests.
 
 ## 2022-02-04
 
+- v2.0.0
+- rename devices-qemu-cortexm
 - v1.1.0
 - 325a75c cmake: add xpack_display_target_lists
 
