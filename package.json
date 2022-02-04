@@ -35,7 +35,7 @@
   "config": {},
   "dependencies": {
     "@micro-os-plus/devices-cortexm": "github:micro-os-plus/devices-cortexm-xpack#semver:2.0.0",
-    "@xpack-3rd-party/arm-cmsis-core-m": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-2"
+    "@xpack-3rd-party/arm-cmsis-core-m": "github:xpack-3rd-party/arm-cmsis-core-m-xpack#semver:5.4.0-4"
   },
   "devDependencies": {},
   "xpack": {
