@@ -6,6 +6,20 @@ Please check
 [GitHub](https://github.com/micro-os-plus/device-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-04
+
+- 325a75c cmake: add xpack_display_target_lists
+
+## 2022-02-03
+
+- 194a8c2 cmake update for interface
+
+## 2022-02-02
+
+- a6b4de9 add meson support
+- c6f5352 cmake fix INTERFACE
+- 6a53cf3 mem.ld: 8MB RAM area
+
 ## 2022-01-30
 
 - rename as device-qemu-cortexm
