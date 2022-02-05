@@ -6,6 +6,11 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-02-05
+
+- v2.0.1
+- dbeb329 package.json update deps
+
 ## 2022-02-04
 
 - v2.0.0
