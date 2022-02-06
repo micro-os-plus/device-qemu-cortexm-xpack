@@ -136,11 +136,11 @@ The header files to be included in user project are:
 
 Only the standard Cortex-M trap handlers are used.
 
-#### Namespaces
+#### C++ Namespaces
 
 - none
 
-#### Classes
+#### C++ Classes
 
 - none
 
