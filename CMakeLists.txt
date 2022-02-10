@@ -52,44 +52,29 @@ add_library(micro-os-plus-devices-qemu-cortexm-interface INTERFACE EXCLUDE_FROM_
 # -----------------------------------------------------------------------------
 # Target settings.
 
-target_include_directories(
-  micro-os-plus-devices-qemu-cortexm-interface
-
-  INTERFACE
-    "include"
+target_include_directories(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
+  "include"
 )
 
-target_sources(
-  micro-os-plus-devices-qemu-cortexm-interface
-
-  INTERFACE
-    "src/system_cortexm.c"
-    "src/vectors_cortexm.c"
+target_sources(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
+  "src/system_cortexm.c"
+  "src/vectors_cortexm.c"
 )
 
-target_compile_definitions(
-  micro-os-plus-devices-qemu-cortexm-interface
-
-  INTERFACE
-    "${xpack_device_compile_definition}"
+target_compile_definitions(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
+  "${xpack_device_compile_definition}"
 )
 
-target_compile_options(
-  micro-os-plus-devices-qemu-cortexm-interface
-
-  INTERFACE
-    # ...
+target_compile_options(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
+  # None.
 )
 
-target_link_libraries(
-  micro-os-plus-devices-qemu-cortexm-interface
-
-  INTERFACE
-    # Dependencies
-    xpack-3rd-party::arm-cmsis-core-m
-    micro-os-plus::devices-cortexm
-    # TODO: check if really needed!
-    micro-os-plus::startup
+target_link_libraries(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
+  # Dependencies
+  xpack-3rd-party::arm-cmsis-core-m
+  micro-os-plus::devices-cortexm
+  # TODO: check if really needed!
+  micro-os-plus::startup
 )
 
 if (COMMAND xpack_display_target_lists)
