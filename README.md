@@ -1,7 +1,7 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
 
-# A source xPack with the µOS++ QEMU Cortex-M board support files
+# A source library xPack with the µOS++ QEMU Cortex-M board support files
 
 QEMU implements several Cortex-M boards, which can be used for running
 tests.
@@ -22,8 +22,8 @@ For maintainer infos, please see the
 
 ## Install
 
-As a source xPacks, the easiest way to add it to a project is via **xpm**,
-but it can also be used as any Git project, for example as a submodule.
+As a source library xPacks, the easiest way to add it to a project is via
+**xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
 
