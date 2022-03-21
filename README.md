@@ -47,14 +47,16 @@ xpm install github:micro-os-plus/devices-qemu-cortexm-xpack
 ```
 
 When ready, this package will be available as
-[`@micro-os-plus/devices-qemu-cortexm-xpack`](https://www.npmjs.com/package/@micro-os-plus/devices-qemu-cortexm-xpack)
+[`@micro-os-plus/devices-qemu-cortexm`](https://www.npmjs.com/package/@micro-os-plus/devices-qemu-cortexm)
 from the `npmjs.com` registry:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @micro-os-plus/devices-qemu-cortexm-xpack@latest
+xpm install @micro-os-plus/devices-qemu-cortexm@latest
+
+ls -l xpacks/micro-os-plus-devices-qemu-cortexm
 ```
 
 ### Git submodule
