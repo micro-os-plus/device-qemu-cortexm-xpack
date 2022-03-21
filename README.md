@@ -14,8 +14,8 @@ need peripherals.
 
 ## Maintainer info
 
-This page is addressed to developers who plan to include this package
-into their own projects.
+This page is addressed to developers who plan to include this source
+library into their own projects.
 
 For maintainer info, please see the
 [README-MAINTAINER](README-MAINTAINER.md) file.
