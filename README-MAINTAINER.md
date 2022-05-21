@@ -44,23 +44,6 @@ Code formatting is done using `clang-format --style=file`, either manually
 from a script, or automatically from Visual Studio Code, or the Eclipse
 CppStyle plug-in.
 
-## Prepare a new blog post
-
-In the `micro-os-plus/web-jekyll` GitHub repo:
-
-- select the `develop` branch
-- add a new file to `_posts/device-qemu-cortexm/releases`
-- name the file like `2020-12-19-device-qemu-cortexm-v1-0-0-released.md`
-- name the post like: **µOS++ device-qemu-cortexm v3.1.0 released**
-- update the `date:` field with the current date
-- update the GitHub Actions URLs using the actual test pages
-
-If any, refer to closed
-[issues](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
-as:
-
-- **[Issue:\[#1\]\(...\)]**.
-
 ## Publish on the npmjs.com server
 
 - select the `xpack-develop` branch
@@ -118,10 +101,6 @@ When the release is considered stable, promote it as `latest`:
 - `npm dist-tag ls @micro-os-plus/devices-qemu-cortexm`
 - `npm dist-tag add @micro-os-plus/devices-qemu-cortexm@3.1.0 latest`
 - `npm dist-tag ls @micro-os-plus/devices-qemu-cortexm`
-
-## Announce to the community
-
-Post an announcement to the forum.
 
 ## Share on Twitter
 
