@@ -54,17 +54,35 @@ extern "C"
 
 #if defined(DEVICE_QEMU_CORTEX_M0)
 
-// TODO
+#define __CM0_REV 0x0000U /*!< Core revision r0p0 */
+#define __MPU_PRESENT 0U /*!< MPU not present */
+#define __NVIC_PRIO_BITS 4U /*!< Uses 4 Bits for the Priority Levels */
+#define __Vendor_SysTickConfig \
+  0U /*!< Set to 1 if different SysTick Config is used  */
+#define __FPU_PRESENT 0U /*!< FPU not present */
+
 #include "core_cm0.h"
 
 #elif defined(DEVICE_QEMU_CORTEX_M0PLUS)
 
-// TODO
+/#define __CM0PLUS_REV 0x0000U /*!< Core revision r0p0 */
+#define __MPU_PRESENT 0U /*!< MPU not present */
+#define __NVIC_PRIO_BITS 4U /*!< Uses 4 Bits for the Priority Levels */
+#define __Vendor_SysTickConfig \
+  0U /*!< Set to 1 if different SysTick Config is used  */
+#define __FPU_PRESENT 0U /*!< FPU not present */
+
 #include "core_cm0plus.h"
 
 #elif defined(DEVICE_QEMU_CORTEX_M3)
 
-// TODO
+#define __CM3_REV 0x0000U /*!< Core revision r0p0 */
+#define __MPU_PRESENT 1U /*!< MPU present */
+#define __NVIC_PRIO_BITS 4U /*!< Uses 4 Bits for the Priority Levels */
+#define __Vendor_SysTickConfig \
+  0U /*!< Set to 1 if different SysTick Config is used  */
+#define __FPU_PRESENT 0U /*!< FPU not present */
+
 #include "core_cm3.h"
 
 #elif defined(DEVICE_QEMU_CORTEX_M4)
@@ -80,7 +98,13 @@ extern "C"
 
 #elif defined(DEVICE_QEMU_CORTEX_M7)
 
-// TODO
+#define __CM7_REV 0x0000U /*!< Core revision r0p0 */
+#define __MPU_PRESENT 1U /*!< MPU present */
+#define __NVIC_PRIO_BITS 4U /*!< Uses 4 Bits for the Priority Levels */
+#define __Vendor_SysTickConfig \
+  0U /*!< Set to 1 if different SysTick Config is used  */
+#define __FPU_PRESENT 1U /*!< FPU present */
+
 #include "core_cm7.h"
 
 #else
