@@ -131,7 +131,7 @@ The header files to be included in user project are:
 
 #### Compiler options
 
-- `-std=c++17` or higher for C++ sources
+- `-std=c++20` or higher for C++ sources
 - `-std=c11` for C sources
 
 #### Interrupt handlers
