@@ -126,7 +126,8 @@ The header files to be included in user project are:
 
 The source files to be added to user projects are:
 
-TODO
+- `src/system_cortexm.c`
+- `src/vectors_cortexm.c`
 
 #### Preprocessor definitions
 
