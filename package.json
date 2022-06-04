@@ -40,7 +40,7 @@
     "actions": {
       "link-deps": [
         "xpm link @micro-os-plus/devices-cortexm",
-        "xpm link @xpack-3rd-party/arm-cmsis-core-m"
+        "xpm link @xpack-3rd-party/arm-cmsis-core"
       ]
     }
   }
