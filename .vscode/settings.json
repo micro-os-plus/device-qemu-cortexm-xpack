@@ -3,9 +3,17 @@
     80
   ],
   "cSpell.ignoreWords": [
+    "CPACR",
+    "DIAG",
     "Ionescu",
     "Liviu",
+    "Maskable",
+    "NVIC",
+    "Wconversion",
     "Wpedantic",
+    "Wuseless",
+    "Wvolatile",
+    "blinky",
     "buildtype",
     "cmake",
     "cmsis",
