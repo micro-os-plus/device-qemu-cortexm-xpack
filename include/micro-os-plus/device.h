@@ -65,7 +65,7 @@ extern "C"
 
 #elif defined(DEVICE_QEMU_CORTEX_M0PLUS)
 
-/#define __CM0PLUS_REV 0x0000U /*!< Core revision r0p0 */
+#define __CM0PLUS_REV 0x0000U /*!< Core revision r0p0 */
 #define __MPU_PRESENT 0U /*!< MPU not present */
 #define __NVIC_PRIO_BITS 4U /*!< Uses 4 Bits for the Priority Levels */
 #define __Vendor_SysTickConfig \
