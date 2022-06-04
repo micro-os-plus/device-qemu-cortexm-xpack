@@ -6,6 +6,14 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-06-04
+
+* v3.2.0
+
+## 2022-05-26
+
+* a54d5b6 -std=c++20
+
 ## 2022-05-21
 
 * v3.1.0
