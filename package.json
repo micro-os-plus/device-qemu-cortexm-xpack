@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/devices-qemu-cortexm",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "A source library xPack with the µOS++ QEMU Cortex-M devices support",
   "main": "",
   "scripts": {
