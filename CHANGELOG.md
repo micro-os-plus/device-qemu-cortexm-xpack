@@ -8,9 +8,9 @@ and close existing issues and pull requests.
 
 ## 2022-06-09
 
-* v4.0.1 published
+* v4.0.1 released
 * 9cae1db mem-mps2-an500.ld: fix memory sizes
-* v4.0.0 published
+* v4.0.0 released
 * ef8bf53 rename mem-mps2-*.ld
 * b74e8fb reset-handler.c: re-define non-weak Reset_Handler
 
