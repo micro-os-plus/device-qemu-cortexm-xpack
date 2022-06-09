@@ -16,6 +16,8 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#if defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
+
 #include "micro-os-plus/device.h"
 
 // ----------------------------------------------------------------------------
@@ -40,5 +42,7 @@ SystemCoreClockUpdate (void)
 {
   SystemCoreClock = SYSTEM_CLOCK;
 }
+
+#endif // defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
 // ----------------------------------------------------------------------------

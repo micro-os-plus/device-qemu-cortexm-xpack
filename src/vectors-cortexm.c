@@ -30,7 +30,7 @@ Default_Handler(void);
 
 // ----------------------------------------------------------------------------
 
-extern uint32_t _initial_main_stack_pointer;
+extern uint32_t __stack;
 
 typedef void
 (*handler_ptr_t)(void);
@@ -50,7 +50,7 @@ __attribute__ ((section(".interrupt_vectors"),used))
 handler_ptr_t _interrupt_vectors[] =
   {
     // Cortex-M Core Handlers
-    (handler_ptr_t) &_initial_main_stack_pointer, // MSP
+    (handler_ptr_t) &__stack,          // MSP
     Reset_Handler,                     // The reset handler
 
     NMI_Handler,                       // The NMI handler

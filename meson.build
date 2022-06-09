@@ -33,8 +33,9 @@ micro_os_plus_devices_qemu_cortexm_dependency = declare_dependency(
     'include',
   ),
   sources: files(
-    'src/system_cortexm.c',
-    'src/vectors_cortexm.c',
+    'src/reset-handler.c',
+    'src/system-cortexm.c',
+    'src/vectors-cortexm.c',
   ),
   compile_args: [
     '-D' + xpack_device_compile_definition
@@ -42,7 +43,7 @@ micro_os_plus_devices_qemu_cortexm_dependency = declare_dependency(
   dependencies: [
     xpack_3rd_party_arm_cmsis_core_m_dependency,
     micro_os_plus_devices_cortexm_dependency,
-    micro_os_plus_startup_dependency,
+    # micro_os_plus_startup_dependency,
   ],
 )
 

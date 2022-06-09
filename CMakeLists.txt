@@ -58,8 +58,9 @@ target_include_directories(micro-os-plus-devices-qemu-cortexm-interface INTERFAC
 )
 
 target_sources(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
-  "src/system_cortexm.c"
-  "src/vectors_cortexm.c"
+  "src/reset-handler.c"
+  "src/system-cortexm.c"
+  "src/vectors-cortexm.c"
 )
 
 target_compile_definitions(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
@@ -75,7 +76,7 @@ target_link_libraries(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
   xpack-3rd-party::arm-cmsis-core-m
   micro-os-plus::devices-cortexm
   # TODO: check if really needed!
-  micro-os-plus::startup
+  # micro-os-plus::startup
 )
 
 if (COMMAND xpack_display_target_lists)
