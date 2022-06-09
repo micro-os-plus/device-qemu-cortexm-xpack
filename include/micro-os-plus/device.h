@@ -44,7 +44,6 @@ extern "C"
     SysTick_IRQn = -1, /*!< 15 System Tick Interrupt */
   } IRQn_Type;
 
-
 #pragma GCC diagnostic push
 #ifdef __cplusplus
 #pragma GCC diagnostic ignored "-Wuseless-cast"
