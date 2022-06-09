@@ -173,7 +173,9 @@ backwards incompatible changes are introduced to the public API.
 The incompatible changes, in reverse chronological order,
 are:
 
-- TBD
+- v4.x: rename mem-mps2-*.ld; non-weak Reset_Handler
+- v3.x: rename MICRO_OS_PLUS_DEBUG
+- v2.x: rename devices-qemu-cortexm
 
 ## License
 

@@ -6,6 +6,12 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-06-09
+
+* v4.0.0 prepared
+* ef8bf53 rename mem-mps2-*.ld
+* b74e8fb reset-handler.c: re-define non-weak Reset_Handler
+
 ## 2022-06-04
 
 * v3.2.0
