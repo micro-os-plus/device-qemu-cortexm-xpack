@@ -24,8 +24,9 @@
 
 MEMORY
 {
-  FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 16M
-  /* From the source code the size is apparently 16, but >8 crashes. */
-  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 8M
+  FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 0x008000000 /* 8M */
+  RAM (xrw) : ORIGIN = 0x20000000, LENGTH = 0x00800000 /* 8M */
+  /* Semihosting SYS_HEAPINFO returns it. */
+  HEAP (xrw) : ORIGIN = 0x21000000, LENGTH = 0x01000000 /* 16M */
 }
 
