@@ -39,7 +39,6 @@
     "minimumXpmRequired": "0.11.0",
     "actions": {
       "link-deps": [
-        "xpm link @micro-os-plus/devices-cortexm",
         "xpm link @xpack-3rd-party/arm-cmsis-core"
       ]
     }
