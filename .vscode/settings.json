@@ -19,6 +19,7 @@
     "cmsis",
     "cortexm",
     "ctest",
+    "deps",
     "mkdir",
     "npmignore",
     "npmjs",
