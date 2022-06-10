@@ -8,6 +8,8 @@ and close existing issues and pull requests.
 
 ## 2022-06-10
 
+* v4.1.1 released
+* 8430dd5 package.json: update link-deps
 * v4.1.0 released
 * 7cd4195 add exception-handlers.cpp
 * 103a2ce remove deps on devices-cortexm
