@@ -6,6 +6,12 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2022-06-10
+
+* v4.1.0 released
+* 7cd4195 add exception-handlers.cpp
+* 103a2ce remove deps on devices-cortexm
+
 ## 2022-06-09
 
 * v4.0.1 released
