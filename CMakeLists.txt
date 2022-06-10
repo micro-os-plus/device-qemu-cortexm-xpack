@@ -61,6 +61,7 @@ target_sources(micro-os-plus-devices-qemu-cortexm-interface INTERFACE
   "src/reset-handler.c"
   "src/system-cortexm.c"
   "src/vectors-cortexm.c"
+  "src/exception-handlers.cpp"
 )
 
 target_compile_definitions(micro-os-plus-devices-qemu-cortexm-interface INTERFACE

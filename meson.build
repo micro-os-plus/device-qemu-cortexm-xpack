@@ -36,6 +36,7 @@ micro_os_plus_devices_qemu_cortexm_dependency = declare_dependency(
     'src/reset-handler.c',
     'src/system-cortexm.c',
     'src/vectors-cortexm.c',
+    'src/exception-handlers.cpp',
   ),
   compile_args: [
     '-D' + xpack_device_compile_definition
