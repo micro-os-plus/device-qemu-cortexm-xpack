@@ -102,6 +102,7 @@ Default_Handler(void)
 #endif
   while (1)
     {
+      micro_os_plus_architecture_wfi();
     }
 }
 
