@@ -13,6 +13,7 @@
     "Wpedantic",
     "Wuseless",
     "Wvolatile",
+    "Xpmake",
     "blinky",
     "buildtype",
     "cmake",
@@ -20,13 +21,16 @@
     "cortexm",
     "ctest",
     "deps",
+    "eabi",
     "mkdir",
     "npmignore",
     "npmjs",
     "postversion",
+    "semihosted",
     "subdir",
     "xpack",
     "xpacks"
   ],
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "editor.wordWrap": "on"
 }
