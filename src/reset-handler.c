@@ -20,8 +20,6 @@
 #include <micro-os-plus/architecture-cortexm/exception-handlers.h>
 
 #include <stdint.h>
-// #include <sys/types.h>
-// #include <string.h>
 
 // ----------------------------------------------------------------------------
 
@@ -71,8 +69,10 @@ Reset_Handler (void)
   *((uint32_t*)0xE000EF34) |= (uint32_t)(0x3 << 29);
 #endif // defined(__ARM_FP)
 
+#if !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
   // Newlib `_start()` does not copy initialised data.
-  // May be optimised to a call to memcpy(), thus the stack must be set.
+  // The compiler may optimise it to a call to memcpy(), thus the stack
+  // must be set at this point.
   if (&__data_load_addr__ != &__data_begin__)
     {
       // Iterate and copy word by word.
@@ -84,6 +84,7 @@ Reset_Handler (void)
           *p++ = *from++;
         }
     }
+#endif // !defined(MICRO_OS_PLUS_INCLUDE_STARTUP)
 
   _start ();
 }
