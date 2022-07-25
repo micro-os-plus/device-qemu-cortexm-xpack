@@ -1,16 +1,17 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/CI.yml)
 
 # A source library xPack with the µOS++ QEMU Cortex-M board support files
 
-QEMU implements several Cortex-M boards, which can be used for running
-tests.
-
-This project provides the initialization code required to build
+This project provides the **devices-qemu-cortexm** source library as an xPack
+dependency and includes the initialization code required to build
 applications running on these boards.
 
 It is intended to be included in unit tests, which generally do not
 need peripherals.
+
+The project is hosted on GitHub as
+[micro-os-plus/devices-qemu-cortexm-xpack](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack).
 
 ## Maintainer info
 
@@ -22,7 +23,7 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPacks, the easiest way to add it to a project is via
+As a source library xPack, the easiest way to add it to a project is via
 **xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
@@ -35,18 +36,7 @@ For details please follow the instructions in the
 
 ### xpm
 
-Note: the package will be available from npmjs.com at a later date.
-
-For now, it can be installed from GitHub:
-
-```sh
-cd my-project
-xpm init # Unless a package.json is already present
-
-xpm install github:micro-os-plus/devices-qemu-cortexm-xpack
-```
-
-When ready, this package will be available as
+This package is available from npmjs.com as
 [`@micro-os-plus/devices-qemu-cortexm`](https://www.npmjs.com/package/@micro-os-plus/devices-qemu-cortexm)
 from the `npmjs.com` registry:
 
@@ -88,15 +78,21 @@ into `xpack`.
 
 ## Developer info
 
-This project can be used as-is for simple tests or blinky projects.
+### Overview
 
-It can also be copied into
-the user project, the configuration updated, and content regenerated,
-at any time.
+QEMU implements several RISC-V boards, which can be used for running
+tests.
+
+- <https://www.qemu.org/docs/master/system/target-arm.html>
+- <https://www.qemu.org/docs/master/system/arm/mps2.html>
+
+This project provides the initialization code required to build
+applications running on these boards.
 
 ### Status
 
-The QEMU Cortex-M support is work in progress.
+The **device-qemu-cortexm** source library is fully functional,
+but minimalistic, for running semihosted tests.
 
 ### Limitations
 
@@ -107,14 +103,22 @@ The current initialisation code does not touch them.
 
 ### Build & integration info
 
-To integrate this package into user projects, consider the following details:
+The project is written in C++ and assembly and it is expected
+to be used in C and C++ projects.
+
+The source code was compiled with
+arm-none-eabi-gcc 11, and should be warning free.
+
+To ease the integration of this package into user projects, there
+are already made CMake and meson configuration files (see below).
+
+For other build systems, consider the following details:
 
 #### Include folders
 
 The following folders should be passed to the compiler during the build:
 
 - `include`
-- `include/cmsis-core`
 
 The header files to be included in user project are:
 
@@ -128,11 +132,12 @@ The source files to be added to user projects are:
 
 - `src/system_cortexm.c`
 - `src/vectors_cortexm.c`
+- `src/reset-handler.c`
+- `src/exception-handlers.c`
 
 #### Preprocessor definitions
 
-- `MICRO_OS_PLUS_INCLUDE_MICRO_OS_PLUS_DIAG_TRACE` to enable the `trace_printf()`
-  calls in `Error_Handler()` and `assert_failed()`.
+- none
 
 #### Compiler options
 
@@ -150,6 +155,53 @@ Only the standard Cortex-M trap handlers are used.
 #### C++ Classes
 
 - none
+
+#### Dependencies
+
+- none
+
+#### CMake
+
+To integrate the devices-qemu-cortexm source library into a CMake application,
+add this folder to the build:
+
+```cmake
+add_subdirectory("xpacks/micro-os-plus-devices-qemu-cortexm")`
+```
+
+The result is an interface library that can be added as an application
+dependency with:
+
+```cmake
+target_link_libraries(your-target PRIVATE
+
+  micro-os-plus::devices-qemu-cortexm
+)
+```
+
+#### meson
+
+To integrate the devices-qemu-cortexm source library into a meson application,
+add this folder to the build:
+
+```meson
+subdir('xpacks/micro-os-plus-devices-qemu-cortexm')
+```
+
+The result is a dependency object that can be added
+to an application with:
+
+```meson
+exe = executable(
+  your-target,
+  link_with: [
+    # Nothing, not static.
+  ],
+  dependencies: [
+    micro_os_plus_devices_qemu_cortexm_dependency,
+  ]
+)
+```
 
 ### Examples
 
