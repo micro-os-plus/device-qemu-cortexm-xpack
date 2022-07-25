@@ -37,7 +37,7 @@ if(COMMAND xpack_get_package_name_and_version)
 endif()
 
 if(NOT xpack_device_compile_definition)
-  message(FATAL_ERROR "Define 'xpack_device_compile_definition' globally before including device-qemu-cortexm")
+  message(FATAL_ERROR "Define 'xpack_device_compile_definition' globally before including devices-qemu-cortexm")
 endif()
 
 # -----------------------------------------------------------------------------
