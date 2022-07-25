@@ -1,0 +1,31 @@
+{
+  "minimumXpmakeRequired": "0.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Liviu Ionescu",
+  "description": "Top QEMU Cortex-M components",
+  "cdlComponents": {
+    "devices-qemu-cortexm": {
+      "description": "The QEMU Cortex-M device definitions.",
+      "parent": "micro-os-plus",
+      "compilerIncludeFolders": [
+        "include"
+      ],
+      "compilerSourceFiles": [
+        "src/reset-handler.c",
+        "src/system-cortexm.c",
+        "src/vectors-cortexm.c",
+        "src/exception-handlers.cpp"
+      ],
+      "$comment": "Clarify how to use the device definition, known in the platform",
+      "compilerDefinitions": [],
+      "compilerOptions": [],
+      "dependencies": [
+        "xpack-3rd-party::arm-cmsis-core-m"
+      ],
+      "generatedDefinition": "MICRO_OS_PLUS_INCLUDE_DEVICES_QEMU_CORTEXM",
+      "implementedInterfaces": [
+        "device"
+      ]
+    }
+  }
+}
