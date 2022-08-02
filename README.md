@@ -1,3 +1,6 @@
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/package.json)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/tags/)
+[![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/devices-qemu-cortexm.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/devices-qemu-cortexm/)
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/CI.yml)
 
