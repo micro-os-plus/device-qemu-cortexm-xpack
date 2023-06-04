@@ -55,7 +55,7 @@ xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/devices-qemu-cortexm@latest
 
-ls -l xpacks/micro-os-plus-devices-qemu-cortexm
+ls -l xpacks/@micro-os-plus/devices-qemu-cortexm
 ```
 
 ### Git submodule
@@ -69,7 +69,7 @@ git init # Unless already a Git project
 mkdir -p xpacks
 
 git submodule add https://github.com/micro-os-plus/devices-qemu-cortexm-xpack.git \
-  xpacks/micro-os-plus-devices-qemu-cortexm-xpack
+  xpacks/@micro-os-plus/devices-qemu-cortexm-xpack
 ```
 
 ## Branches
@@ -175,7 +175,7 @@ To integrate the devices-qemu-cortexm source library into a CMake application,
 add this folder to the build:
 
 ```cmake
-add_subdirectory("xpacks/micro-os-plus-devices-qemu-cortexm")`
+add_subdirectory("xpacks/@micro-os-plus/devices-qemu-cortexm")`
 ```
 
 The result is an interface library that can be added as an application
@@ -194,7 +194,7 @@ To integrate the devices-qemu-cortexm source library into a meson application,
 add this folder to the build:
 
 ```meson
-subdir('xpacks/micro-os-plus-devices-qemu-cortexm')
+subdir('xpacks/@micro-os-plus/devices-qemu-cortexm')
 ```
 
 The result is a dependency object that can be added
