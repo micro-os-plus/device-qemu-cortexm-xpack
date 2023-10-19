@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/devices-qemu-cortexm-xpack)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/actions/workflows/ci.yml)
 
-# A source library xPack with the µOS++ QEMU Cortex-M board support files
+# A source code library with the µOS++ QEMU Cortex-M board support files
 
 This project provides the **devices-qemu-cortexm** source library as an xPack
 dependency and includes the initialization code required to build
@@ -240,7 +240,7 @@ are:
 
 ## License
 
-The original content is released under the
-[MIT License](https://opensource.org/licenses/MIT/),
+Unless otherwise stated, the content is released under the terms of the
+[MIT License](https://opensource.org/licenses/mit/),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
