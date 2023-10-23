@@ -6,9 +6,16 @@ Please check
 [GitHub](https://github.com/micro-os-plus/devices-qemu-cortexm-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2023-10-23
+
+* v5.1.0
+* 30dd5d6 add an386.ld
+
 ## 2023-10-19
 
-* v5.0.0
+* 8201e7c 5.0.0
+* 1b2e96a .vscode/settings.json: ignoreWords
+* 3b57ea9 prepare v5.0.0
 * 4001bd6 package.json: cosmetise description
 * cb5a563 README updates
 * 2e04016 device.h: update MICRO_OS_PLUS_DEVICE_*
